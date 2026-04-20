@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amor Bakery - Mojokerto</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.min.css">
+
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        /* Banner */
+        .banner {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                url("https://images.unsplash.com/photo-1517686469429-8bdb88b9f907?q=80&w=2070&auto=format&fit=crop");
+            background-size: cover;
+            background-position: center;
+        }
+
+        .btn-red {
+            background-color: #8b0000;
+            color: white;
+            border: none;
+        }
+
+        .btn-red:hover {
+            background-color: #5c0000;
+            color: white;
+        }
+
+        .card img {
+            height: 220px;
+            object-fit: cover;
+        }
+
+        /* Service Section */
+        .service-section {
+            background-color: #f8f9fa;
+        }
+
+        .service-card {
+            background-color: #ffffff;
+            border-radius: 15px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .icon-service {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: #8b0000;
+            color: #ffffff;
+            font-size: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Review Section */
+        .testimony {
+            background: linear-gradient(135deg, #444, #222);
+            padding: 80px 0;
+        }
+
+        .review-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 25px;
+            position: relative;
+            transition: 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            height: 100%;
+            color: white;
+        }
+
+        .review-card:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .quote {
+            font-size: 40px;
+            opacity: 0.3;
+            position: absolute;
+            top: 5px;
+            left: 15px;
+        }
+
+        .stars {
+            color: gold;
+        }
+
+        /* Reservasi */
+        .btn-reservasi {
+            width: 100%;
+            padding: 12px;
+            background-color: #f4b400;
+            border: none;
+            color: white;
+            border-radius: 4px;
+            transition: 0.3s;
+        }
+
+        .btn-reservasi:hover {
+            background-color: #e0a800;
+        }
+
+        /* Footer & Social */
+        .footer-custom {
+            background-color: #1f252b;
+            color: #cfd8dc;
+        }
+
+        .social-icon {
+            font-size: 1.5rem;
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;
+            display: inline-block;
+        }
+
+        .social-icon:hover {
+            color: #f4b400;
+            transform: scale(1.2);
+        }
+
+        .pagination .page-link {
+            color: #8b0000;
+        }
+
+        .pagination .page-item.active .page-link {
+            background-color: #8b0000;
+            border-color: #8b0000;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">Amor Bakery</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Produk.html">Menu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="promo.html">Promo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Kranjang.html">keranjang</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="banner d-flex align-items-center">
+        <div class="container text-center">
+            <h1 class="display-3 fw-bold text-white">Amor Bakery</h1>
+            <p class="lead text-white fs-4">Bakery premium yang dipanggang segar setiap hari.</p>
+            <div class="row justify-content-center mt-4">
+                <div class="col-md-6">
+                    <div class="input-group shadow">
+                        <select class="form-select">
+                            <option selected>Pilih Varian...</option>
+                            <option>Donat</option>
+                            <option>Pastry</option>
+                            <option>Kue Tart</option>
+                        </select>
+                        <button class="btn btn-red px-4">Cari Menu</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="menu" class="container py-5">
+        <h2 class="text-center fw-bold mb-5">Menu Favorit Kami</h2>
+        <div class="row g-4">
+            <div class="col-md-3">
+                <div class="card h-100 border-0 shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?w=500" class="card-img-top" alt="Donat">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Donat Coklat</h5>
+                        <p class="card-text text-muted small">Donat lembut dengan lelehan coklat premium.</p>
+                        <h5 class="text-danger fw-bold">Rp 13.000</h5>
+                        <a href="#" class="btn btn-red w-100 mt-2">Pesan</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card h-100 border-0 shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1608198093002-ad4e005484ec?w=500" class="card-img-top" alt="Croissant">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Croissant Butter</h5>
+                        <p class="card-text text-muted small">Pastry renyah dengan aroma mentega asli.</p>
+                        <h5 class="text-danger fw-bold">Rp 35.000</h5>
+                        <a href="#" class="btn btn-red w-100 mt-2">Pesan</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card h-100 border-0 shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=500" class="card-img-top" alt="Kue Tart">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Kue Tart Strawberry</h5>
+                        <p class="card-text text-muted small">Manis, lembut, dan segar untuk momen spesial.</p>
+                        <h5 class="text-danger fw-bold">Rp 90.000</h5>
+                        <a href="#" class="btn btn-red w-100 mt-2">Pesan</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card h-100 border-0 shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=500" class="card-img-top" alt="Roti Bakar">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Roti Gandum</h5>
+                        <p class="card-text text-muted small">Sehat dan mengenyangkan untuk sarapan.</p>
+                        <h5 class="text-danger fw-bold">Rp 17.500</h5>
+                        <a href="#" class="btn btn-red w-100 mt-2">Pesan</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="layanan" class="service-section py-5">
+        <div class="container text-center">
+            <h2 class="fw-bold mb-5">Layanan Kami</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="service-card p-4 h-100 shadow-sm">
+                        <div class="icon-service mx-auto mb-3">🍰</div>
+                        <h5 class="fw-bold">Kue Custom</h5>
+                        <p class="text-muted">Pesan kue sesuai desain dan tema favoritmu.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card p-4 h-100 shadow-sm">
+                        <div class="icon-service mx-auto mb-3">🚚</div>
+                        <h5 class="fw-bold">Pengantaran Cepat</h5>
+                        <p class="text-muted">Layanan antar aman langsung ke depan rumahmu.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card p-4 h-100 shadow-sm">
+                        <div class="icon-service mx-auto mb-3">🥐</div>
+                        <h5 class="fw-bold">Bahan Premium</h5>
+                        <p class="text-muted">Menggunakan bahan berkualitas tinggi dan 100% halal.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimony">
+        <div class="container">
+            <h2 class="text-center text-white fw-bold mb-5">Apa Kata Mereka?</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="review-card">
+                        <div class="quote">“</div>
+                        <h5 class="mt-4">Rotinya sangat lembut!</h5>
+                        <p class="small">Keluarga saya sangat suka dengan donat coklatnya, beneran lumer.</p>
+                        <div class="stars">★★★★★</div>
+                        <h6 class="mt-3 opacity-75">- arya ankasmara</h6>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="review-card">
+                        <div class="quote">“</div>
+                        <h5 class="mt-4">Pelayanan Cepat</h5>
+                        <p class="small">Pesan tart buat ulang tahun mendadak tetap dilayani dengan sangat baik.</p>
+                        <div class="stars">★★★★★</div>
+                        <h6 class="mt-3 opacity-75">- Baskara agasta</h6>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="review-card">
+                        <div class="quote">“</div>
+                        <h5 class="mt-4">Tempat Bersih</h5>
+                        <p class="small">Sering mampir ke outlet, tempatnya bersih dan wangi roti banget.</p>
+                        <div class="stars">★★★★★</div>
+                        <h6 class="mt-3 opacity-75">- bima setiawan</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pesan" class="py-5 bg-white">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="card border-0 shadow p-4">
+                        <h2 class="text-center fw-bold">Reservasi</h2>
+                        <p class="text-center text-muted mb-4">Pastikan stok aman, pesan tempat atau menu sekarang!</p>
+                        <form>
+                            <div class="mb-3">
+                                <label class="form-label">Nama Lengkap</label>
+                                <input type="text" class="form-control" placeholder="Budi">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Nomor WhatsApp</label>
+                                <input type="text" class="form-control" placeholder="0812xxxx">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Jumlah Pesanan/Meja</label>
+                                <input type="number" class="form-control" placeholder="1">
+                            </div>
+                            <button type="submit" class="btn-reservasi fw-bold">Kirim Reservasi</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-custom pt-5 pb-3">
+        <div class="container text-center">
+            <h4 class="fw-bold mb-4">Temui Kami di Sosial Media</h4>
+            <div class="d-flex justify-content-center gap-4 mb-5">
+                <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="bi bi-twitter"></i></a>
+                <a href="#" class="social-icon"><i class="bi bi-youtube"></i></a>
+            </div>
+            
+            <div class="row text-md-start mt-5">
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold border-bottom border-warning d-inline-block pb-2">Amor Bakery</h5>
+                    <p class="small mt-3">Toko roti terpercaya di Mojokerto dengan bahan premium dan rasa bintang lima.</p>
+                </div>
+                <div class="col-md-4 mb-4 text-center">
+                    <h5 class="fw-bold">Navigasi</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#home" class="text-light text-decoration-none small">Beranda</a></li>
+                        <li><a href="#menu" class="text-light text-decoration-none small">Menu</a></li>
+                        <li><a href="#pesan" class="text-light text-decoration-none small">Reservasi</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold">Kontak Kami</h5>
+                    <p class="small mb-1"><i class="bi bi-geo-alt-fill me-2 text-warning"></i> Mojokerto, Jawa Timur</p>
+                    <p class="small mb-1"><i class="bi bi-telephone-fill me-2 text-warning"></i> +62 812-3456-7890</p>
+                </div>
+            </div>
+            
+            <hr class="mt-4 opacity-25">
+            <p class="small mb-0 opacity-50">&copy; 2026 Amor Bakery Mojokerto. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

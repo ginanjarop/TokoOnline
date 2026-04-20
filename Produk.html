@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.min.css">
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
+    
+    <title>Delizia Pastry & Bakery - Mojokerto</title>
+
+    <style>
+        /* --- CUSTOM CSS THEME PASTRY --- */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #4a3728; /* Warna teks cokelat tua */
+            background-color: #fffaf5; /* Background krem sangat muda */
+        }
+
+        /* Banner Utama */
+        .banner {
+            height: 100vh;
+            background: linear-gradient(
+                rgba(0, 0, 0, 0.6),
+                rgba(0, 0, 0, 0.6)
+            ),
+            url("https://images.unsplash.com/photo-1517686469429-8bdb88b9f907?q=80&w=2070&auto=format&fit=crop");
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Tombol & Aksen Warna Cokelat */
+        .btn-pastry {
+            background-color: #8d6e63;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            transition: 0.3s;
+        }
+
+        .btn-pastry:hover {
+            background-color: #5f4339;
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .btn-outline-pastry {
+            border: 1px solid #8d6e63;
+            color: #8d6e63;
+            transition: 0.3s;
+        }
+
+        .btn-outline-pastry:hover {
+            background-color: #8d6e63;
+            color: white;
+        }
+
+        /* Sidebar Kategori */
+        .list-group-item.active-pastry {
+            background-color: #8d6e63 !important;
+            border-color: #8d6e63 !important;
+            color: white !important;
+        }
+
+        /* Kartu Produk */
+        .card {
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+        }
+
+        .potret {
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+        }
+
+        .text-brown {
+            color: #5d4037;
+        }
+
+        /* Section Subscribe & Footer */
+        .section-pastry {
+            background-color: #6d4c41; /* Cokelat Medium */
+        }
+
+        .social-icon-pastry {
+            font-size: 28px;
+            color: #d7ccc8;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+
+        .social-icon-pastry:hover {
+            color: #ffccbc;
+            transform: translateY(-5px);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #8d6e63;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">Amor bakeri </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="halaman.html">Beranda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="produk.html">produk</a></li>
+                    <li class="nav-item"><a class="nav-link" href="promo.html">promo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="kranjang.html">Kranjang</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="container-fluid banner d-flex align-items-center">
+        <div class="container text-center text-white">
+            <h1 class="display-3 fw-bold mb-3">Kelezatan Autentik</h1>
+            <p class="lead mb-4 fs-4">Bakery premium yang dipanggang segar setiap hari.</p>
+            <div class="input-group w-50 mx-auto mt-4">
+                <select class="form-select form-select-lg" title="Pilih Produk">
+                    <option selected>Cari Jenis Roti...</option>
+                    <option>Donat</option>
+                    <option>peastry</option>
+                    <option>kue tart</option>
+                    
+                </select>
+                <button class="btn btn-pastry btn-lg">Cari Menu</button>
+            </div>
+        </div>
+    </section>
+
+    <div id="katalog" class="container-fluid py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-lg-3 mb-5">
+                    <h4 class="mb-4 fw-bold border-bottom pb-2 text-brown">Menu Kami</h4>
+                    <ul class="list-group shadow-sm border-0">
+                        <li class="list-group-item active-pastry border-0">Semua Kategori</li>
+                        <li class="list-group-item border-0">French Pastries</li>
+                        <li class="list-group-item border-0">Custom Cakes</li>
+                        <li class="list-group-item border-0">Artisan Bread</li>
+                        <li class="list-group-item border-0">Best Seller</li>
+                    </ul>
+                </div>
+
+                <div class="col-md-8 col-lg-9">
+                    <h4 class="text-start mb-4 fw-bold text-brown">Rekomendasi Hari Ini</h4>
+                    <div class="row g-4">
+                        <div class="col-md-6 col-lg-4">
+                            <div class="card h-100 shadow-sm border-0">
+                                <a href="https://images.unsplash.com/photo-1555507036-ab1f4038808a?q=80&w=500" data-lightbox="menu" data-title="Butter Croissant">
+                                    <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?q=80&w=500" class="card-img-top potret" alt="Croissant">
+                                </a>
+                                <div class="card-body text-center">
+                                    <h5 class="card-title fw-bold text-brown">Butter Croissant</h5>
+                                    <p class="card-text text-muted small">Renyah di luar, lembut dan kaya mentega di dalam.</p>
+                                    <div class="dropdown">
+                                        <button class="btn btn-outline-pastry w-100 dropdown-toggle" type="button" data-bs-toggle="dropdown">Opsi</button>
+                                        <ul class="dropdown-menu border-0 shadow w-100">
+                                            <li><a class="dropdown-item" href="#">Lihat Detail</a></li>
+                                            <li><a class="dropdown-item fw-bold text-success" href="#">Pesan (WA)</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4">
+                            <div class="card h-100 shadow-sm border-0">
+                                <a href="https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=500" data-lightbox="menu" data-title="Chocolate Tart">
+                                    <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=500" class="card-img-top potret" alt="Cake">
+                                </a>
+                                <div class="card-body text-center">
+                                    <h5 class="card-title fw-bold text-brown">Belgium Choco Tart</h5>
+                                    <p class="card-text text-muted small">Cokelat murni pilihan dengan base tart yang gurih.</p>
+                                    <div class="dropdown">
+                                        <button class="btn btn-outline-pastry w-100 dropdown-toggle" type="button" data-bs-toggle="dropdown">Opsi</button>
+                                        <ul class="dropdown-menu border-0 shadow w-100">
+                                            <li><a class="dropdown-item" href="#">Lihat Detail</a></li>
+                                            <li><a class="dropdown-item fw-bold text-success" href="#">Pesan (WA)</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4">
+                            <div class="card h-100 shadow-sm border-0">
+                                <a href="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?q=80&w=500" data-lightbox="menu" data-title="Macarons">
+                                    <img src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?q=80&w=500" class="card-img-top potret" alt="Macarons">
+                                </a>
+                                <div class="card-body text-center">
+                                    <h5 class="card-title fw-bold text-brown">Signature Macarons</h5>
+                                    <p class="card-text text-muted small">Aneka rasa dalam warna-warni yang menggoda selera.</p>
+                                    <div class="dropdown">
+                                        <button class="btn btn-outline-pastry w-100 dropdown-toggle" type="button" data-bs-toggle="dropdown">Opsi</button>
+                                        <ul class="dropdown-menu border-0 shadow w-100">
+                                            <li><a class="dropdown-item" href="#">Lihat Detail</a></li>
+                                            <li><a class="dropdown-item fw-bold text-success" href="#">Pesan (WA)</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="subscribe" class="container-fluid py-5 section-pastry">
+        <div class="container text-center text-white">
+            <h5 class="display-6 mb-4">Social Media</h5>
+            <div class="d-flex justify-content-center mb-5 gap-4">
+                <a href="#" class="social-icon-pastry"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="social-icon-pastry"><i class="bi bi-instagram"></i></a>
+                <a href="#" class="social-icon-pastry"><i class="bi bi-tiktok"></i></a>
+                <a href="#" class="social-icon-pastry"><i class="bi bi-whatsapp"></i></a>
+            </div>
+            
+            <h5 class="display-6 mb-2">Subscribe Newsletter</h5>
+            <p class="text-white-50 mb-4">Dapatkan kode promo 20% untuk pembelian pertama Anda.</p>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="input-group mb-5">
+                        <input type="email" class="form-control form-control-lg" placeholder="Masukkan alamat email">
+                        <button class="btn btn-pastry shadow" type="button">Daftar Sekarang</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer id="footer" class="bg-dark text-light py-5">
+        <div class="container">
+            <div class="row text-center text-md-start">
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold mb-3 text-warning">Amor Bakeri</h5>
+                    <p class="small text-secondary">Toko roti terpercaya di Mojokerto dengan bahan premium dan rasa bintang lima.</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold mb-3">Tautan Cepat</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-secondary text-decoration-none">Beranda</a></li>
+                        <li><a href="#katalog" class="text-secondary text-decoration-none">Daftar Menu</a></li>
+                        <li><a href="#" class="text-secondary text-decoration-none">Lokasi Toko</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="fw-bold mb-3">Hubungi Kami</h5>
+                    <ul class="list-unstyled small text-secondary">
+                        <li class="mb-2"><i class="bi bi-geo-alt-fill me-2"></i> mojokerto jawa timur</li>
+                        <li class="mb-2"><i class="bi bi-telephone-fill me-2"></i> +62 62 812-3456-7890</li>
+                        <li class="mb-2"><i class="bi bi-envelope-fill me-2"></i> hello@amorbakery.id</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="border-secondary">
+            <p class="text-center mb-0 small text-secondary">&copy; 2026 Amor Bakery Mojokerto. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+</body>
+
+</html>

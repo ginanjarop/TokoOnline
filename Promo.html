@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amor Bakery - Promo Spesial</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; overflow-x: hidden; }
+
+        /* Banner */
+        .banner {
+            height: 80vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                url("https://images.unsplash.com/photo-1517686469429-8bdb88b9f907?q=80&w=2070&auto=format&fit=crop");
+            background-size: cover; background-position: center;
+        }
+
+        .btn-red { background-color: #8b0000; color: white; border: none; transition: 0.3s; }
+        .btn-red:hover { background-color: #5c0000; color: white; transform: scale(1.05); }
+
+        /* Promo Filter Styles */
+        .filter-btn { transition: all 0.3s ease; border: 2px solid #8b0000; color: #8b0000; font-weight: bold; }
+        .filter-btn.active { background-color: #8b0000 !important; color: white !important; box-shadow: 0 4px 12px rgba(139, 0, 0, 0.3); }
+        
+        .promo-section { display: none; }
+        .promo-section.active { display: block; }
+
+        .hovered-card { opacity: 0; animation: fadeSlideIn 0.5s ease forwards; }
+        @keyframes fadeSlideIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Card Styling */
+        .card { border-radius: 15px; overflow: hidden; transition: 0.3s; border: none; }
+        .card:hover { transform: translateY(-10px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        .card img { height: 200px; object-fit: cover; }
+
+        /* Footer */
+        .footer-custom { background-color: #1f252b; color: #cfd8dc; }
+        .social-icon { font-size: 1.5rem; color: white; transition: 0.3s; }
+        .social-icon:hover { color: #f4b400; transform: scale(1.2); }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">Amor Bakery</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="halaman">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="produk.html">produk</a></li>
+                    <li class="nav-item"><a class="nav-link" href="promo.html">promo</a></li>
+                     <li class="nav-item"><a class="nav-link" href="kranjang.html">kranjang</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="banner d-flex align-items-center">
+        <div class="container text-center">
+            <h1 class="display-3 fw-bold text-white">Promo Spesial Amor</h1>
+            <p class="lead text-white fs-4">Temukan diskon manis khusus minggu ini!</p>
+            <a href="#promo" class="btn btn-red btn-lg px-5 mt-3 shadow">Lihat Promo</a>
+        </div>
+    </section>
+
+    <section id="promo" class="container py-5">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Kategori Promo</h2>
+            <div class="underline mx-auto" style="height: 4px; width: 60px; background: #8b0000;"></div>
+        </div>
+
+        <div class="row justify-content-center mb-4 g-2">
+            <div class="col-6 col-md-3 col-lg-2">
+                <button class="btn btn-outline-danger w-100 filter-btn active" data-target="semuaPromo">Semua</button>
+            </div>
+            <div class="col-6 col-md-3 col-lg-2">
+                <button class="btn btn-outline-danger w-100 filter-btn" data-target="promoDiskon">Diskon %</button>
+            </div>
+            <div class="col-6 col-md-3 col-lg-2">
+                <button class="btn btn-outline-danger w-100 filter-btn" data-target="promoBonus">Bonus +</button>
+            </div>
+        </div>
+
+        <div id="promoContent">
+            
+            <div id="semuaPromo" class="promo-section active">
+                <div class="row g-4">
+                    <div class="col-md-3 hovered-card">
+                        <div class="card h-100 shadow-sm">
+                            <a href="https://images.unsplash.com/photo-1551024601-bec78aea704b?w=500" data-lightbox="promo">
+                                <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?w=500" class="card-img-top" alt="Donat">
+                            </a>
+                            <div class="card-body text-center">
+                                <h5 class="fw-bold">Donat Mix</h5>
+                                <p class="small text-muted">Varian rasa paling populer.</p>
+                                <span class="badge bg-danger">BEST SELLER</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 hovered-card" style="animation-delay: 0.1s;">
+                        <div class="card h-100 shadow-sm">
+                            <img src="https://images.unsplash.com/photo-1608198093002-ad4e005484ec?w=500" class="card-img-top" alt="Croissant">
+                            <div class="card-body text-center">
+                                <h5 class="fw-bold">Buttery Croissant</h5>
+                                <p class="small text-muted">Renyah di luar, lembut di dalam.</p>
+                                <span class="badge bg-warning text-dark">NEW</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="promoDiskon" class="promo-section">
+                <div class="row g-4">
+                    <div class="col-md-3 hovered-card">
+                        <div class="card h-100 border-warning">
+                            <div class="card-body text-center">
+                                <h2 class="text-danger fw-bold">20% OFF</h2>
+                                <h5 class="fw-bold">Kue Tart Strawberry</h5>
+                                <p class="small text-muted">Khusus pembelian via WhatsApp.</p>
+                                <button class="btn btn-red w-100">Klaim Diskon</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="promoBonus" class="promo-section">
+                <div class="row g-4">
+                    <div class="col-md-3 hovered-card">
+                        <div class="card h-100 bg-light">
+                            <div class="card-body text-center">
+                                <h2 class="text-success fw-bold">BUY 2 GET 1</h2>
+                                <h5 class="fw-bold">Roti Gandum Sehat</h5>
+                                <p class="small text-muted">Setiap hari Jumat Berkah.</p>
+                                <button class="btn btn-dark w-100">Ambil Bonus</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row justify-content-center text-center">
+                <div class="col-md-6">
+                    <h3 class="fw-bold">Langganan Newsletter</h3>
+                    <p class="text-muted">Dapatkan info promo terbaru langsung ke emailmu.</p>
+                    <div class="input-group mb-3 shadow-sm">
+                        <input type="email" class="form-control" placeholder="Email Anda...">
+                        <button class="btn btn-red px-4">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pesan" class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="card border-0 shadow-lg p-4">
+                        <h2 class="text-center fw-bold">Hubungi Kami</h2>
+                        <form>
+                            <div class="mb-3">
+                                <label class="form-label">Nama</label>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Pesan Promo</label>
+                                <textarea class="form-control" rows="3"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-red w-100 py-2 fw-bold">Kirim ke WhatsApp</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-custom pt-5 pb-3">
+        <div class="container text-center">
+            <div class="d-flex justify-content-center gap-4 mb-4">
+                <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="bi bi-whatsapp"></i></a>
+            </div>
+            <div class="row text-md-start">
+                <div class="col-md-6 mb-4">
+                    <h5 class="fw-bold text-white border-bottom border-danger d-inline-block pb-2">Amor Bakery Mojokerto</h5>
+                    <p class="small mt-2">Menyediakan kebahagiaan melalui roti berkualitas tinggi sejak 2020.</p>
+                </div>
+                <div class="col-md-6 mb-4 text-md-end">
+                    <h5 class="fw-bold text-white">Kontak</h5>
+                    <p class="small mb-0">Jl. Raya Mojokerto No. 123</p>
+                    <p class="small">WA: +62 812-3456-7890</p>
+                </div>
+            </div>
+            <hr class="opacity-25">
+            <p class="small mb-0 opacity-50">&copy; 2026 Amor Bakery. Dibuat dengan ❤️</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+
+    <script>
+        const filterBtns = document.querySelectorAll(".filter-btn");
+        const sections = document.querySelectorAll(".promo-section");
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener("click", () => {
+                const target = btn.getAttribute("data-target");
+
+                // Aktifkan Button
+                filterBtns.forEach(b => b.classList.remove("active"));
+                btn.classList.add("active");
+
+                // Tampilkan Section
+                sections.forEach(sec => {
+                    sec.classList.remove("active");
+                    if(sec.id === target) {
+                        sec.classList.add("active");
+                        
+                        // Reset Animasi Card
+                        const cards = sec.querySelectorAll('.hovered-card');
+                        cards.forEach(card => {
+                            card.style.animation = 'none';
+                            card.offsetHeight; /* trigger reflow */
+                            card.style.animation = null;
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
